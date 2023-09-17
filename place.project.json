@@ -1,0 +1,92 @@
+{
+  "name": "Untitled Fighting Live Development \n Dont Edit The Shared Folders",
+  "servePlaceIds": [13477032600],
+  "tree": {
+    "$className": "DataModel",
+
+    "ReplicatedStorage": {
+      "$className": "ReplicatedStorage",
+      "$ignoreUnknownInstances": true,
+
+      "Packages": {
+        "$path": "Packages"
+      },
+
+      "SystemPackages": {
+        "$path": "System Packages"
+      },
+
+      "Shared": {
+        "$path": "Shared"
+      }
+
+    },
+
+    "ReplicatedFirst": {
+      "$className":"ReplicatedFirst",
+      "$ignoreUnknownInstances": true,
+
+      "Shared": {
+        "$path": "Client/Client First"
+      }
+    },
+
+    "ServerScriptService": {
+      "$className": "ServerScriptService",
+      "$ignoreUnknownInstances": true,
+
+      "Shared": {
+        "$path": "Server"
+      }
+
+    },
+
+    "ServerStorage": {
+      "$className": "ServerStorage",
+      "$ignoreUnknownInstances": true,
+
+      "Shared": {
+        "$path": "Server Shared"
+      }
+    },
+    "StarterPlayer": {
+      "$className": "StarterPlayer",
+
+      "StarterCharacterScripts": {
+        "$className": "StarterCharacterScripts",
+        "$ignoreUnknownInstances": true,
+
+        "Shared": {
+          "$path": "Client/Client Character"
+        }
+      },
+      "StarterPlayerScripts": {
+        "$className": "StarterPlayerScripts",
+        "$ignoreUnknownInstances": true,
+        
+        "Shared": {
+          "$path": "Client/Client Player"
+        }
+
+      },
+      "$ignoreUnknownInstances": true
+    },
+
+    "Teams": {
+      "$className": "Teams",
+
+      "Contestants": {
+        "$className": "Team",
+        "$properties": { 
+          "TeamColor": {"BrickColor": 327}, 
+          "AutoAssignable": {"Bool": false} 
+        }
+      },
+
+      "Lobby": {
+        "$className": "Team",
+        "$properties": { "TeamColor": {"BrickColor": 199} }
+      }
+    }
+  }
+}
