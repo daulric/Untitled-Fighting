@@ -25,14 +25,6 @@ function UserStatsScroll:render()
         BackgroundTransparency = 1,
         BorderColor3 = Color3.fromRGB(30, 30, 30),
 
-        [Event.ChildAdded] = function(element: ScrollingFrame, child)
-            
-        end,
-
-        [Event.ChildRemoved] = function(element: ScrollingFrame)
-            
-        end
-
     }, self.props[Children])
 end
 

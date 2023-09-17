@@ -3,7 +3,9 @@ local TweenService = game:GetService("TweenService")
 
 local devbox = require(ReplicatedStorage:WaitForChild("Packages").devbox)
 
-local Component, createBinding, createElement, Ref, Children = devbox.import(devbox.react) {
+local react = devbox.react
+
+local Component, createBinding, createElement, Ref, Children = devbox.import(react) {
     "Component", "createBinding", "createElement", "Ref", "Children"
 }
 
@@ -20,6 +22,7 @@ local tInfo = TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut
 
 function USF:init()
     self.enabled, self.updateEnabled = createBinding(false)
+    self.frameGet = react.createRef()
 end
 
 function tweenFrame(frame, props)
@@ -35,7 +38,9 @@ function tweenFrame(frame, props)
 end
 
 function USF:didMount()
+    local frame: Frame = self.frameGet:getValue()
 
+    self.frame = frame
     self.frame.Position = movingPos
 
     UserSS.event:Connect(function(Type)
@@ -84,17 +89,7 @@ end
 function USF:render()
     return createElement("Frame", {
         Name = "User Stats Frame",
-        [Ref] = function(instance: Frame)
-
-            local success, err = pcall(function()
-                self.frame = instance
-            end)
-
-            if not success then
-                error(`There is no instance {err}`)
-            end
-            
-        end,
+        [Ref] = self.frameGet,
 
         Visible = self.enabled:map(function(value)
             return value
