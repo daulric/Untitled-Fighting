@@ -17,6 +17,7 @@ Controllers.AddController(ControllersFolder)
 local ClientFiles = RS.Shared:WaitForChild("ClientFiles")
 
 local StatusScreen = require(RS.Shared:WaitForChild("Components").Status.StatusScreen)
+local SettingsScreen = require(RS.Shared.Components.Settings.SettingsScreen)
 local NewUST = RS.Shared:WaitForChild("Components").UserStats
 
 local UserStatsScreen = require(NewUST:WaitForChild("UserStatsScreen"))
@@ -46,6 +47,11 @@ function startMount()
 
 	mount(
 		createElement(UserStatsScreen),
+		player.PlayerGui
+	)
+
+	mount(
+		createElement(SettingsScreen),
 		player.PlayerGui
 	)
 end

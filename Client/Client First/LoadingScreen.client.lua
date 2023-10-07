@@ -7,9 +7,6 @@ local StarterGui = game:GetService("StarterGui")
 local player = Players.LocalPlayer
 
 local devbox = require(ReplicatedStorage:WaitForChild("Packages").devbox)
-local controllers = devbox.controllers
-
-local Icon = require(ReplicatedStorage:WaitForChild("SystemPackages").Icon)
 
 local Components = ReplicatedStorage:WaitForChild("Shared"):WaitForChild("Components")
 local loadingFrags = require(Components:WaitForChild("LoadingScreen").LoadingFrags)
@@ -49,21 +46,3 @@ connect = player:GetAttributeChangedSignal("AFK"):Connect(function()
 end)
 
 handle = mount(loadingElement, player.PlayerGui)
-
--- Handling Icons
-repeat task.wait(1) until StarterGui:GetCoreGuiEnabled(Enum.CoreGuiType.All) == true
-
-local UserStatsSelection = controllers.GetController("UserSS")
-
-local icon = Icon.new()
-
-icon:setImage("http://www.roblox.com/asset/?id=6022668898")
-icon:setCaption("Stats")
-
-icon:bindEvent("selected", function(element)
-	UserStatsSelection:SendSignal("select")
-end)
-
-icon:bindEvent("deselected", function(element)
-	UserStatsSelection:SendSignal("deselect")
-end)

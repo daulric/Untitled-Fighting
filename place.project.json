@@ -18,6 +18,10 @@
 
       "Shared": {
         "$path": "Shared"
+      },
+
+      "Settings": {
+        "$className": "ObjectValue"
       }
 
     },
