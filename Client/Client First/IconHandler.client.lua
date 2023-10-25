@@ -1,36 +1,27 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local StarterGui = game:GetService("StarterGui")
 
-local devbox = require(ReplicatedStorage:WaitForChild("Packages").devbox)
-local controllers = devbox.controllers
-
-local UserStatsSelection = controllers.GetController("UserSS")
-local SettingsController = controllers.GetController("Settings Controller")
-
-
 local Icon = require(ReplicatedStorage:WaitForChild("SystemPackages").Icon)
 
 repeat task.wait(1) until StarterGui:GetCoreGuiEnabled(Enum.CoreGuiType.All) == true
 
-local userStatsIcon = Icon.new()
-local userSettingsIcon = Icon.new()
+local Icons = script.Parent:WaitForChild("Icons")
 
-userStatsIcon:setImage("http://www.roblox.com/asset/?id=6022668898")
-userStatsIcon:setCaption("Stats")
-
-userSettingsIcon:setImage()
-userSettingsIcon:setCaption("Settings")
-
-userStatsIcon:bindEvent("selected", function(element)
-	UserStatsSelection:SendSignal("select")
-end)
-
-userStatsIcon:bindEvent("deselected", function(element)
-	UserStatsSelection:SendSignal("deselect")
-end)
+local SettingIcon = require(Icons:WaitForChild("SettingIcon"))
+local UserStatsIcon = require(Icons:WaitForChild("UserStatsIcon"))
 
 local dropdownIcon = Icon.new()
+dropdownIcon:setImage("http://www.roblox.com/asset/?id=6031091004")
+
+dropdownIcon.selected:Connect(function()
+    dropdownIcon:setImage("http://www.roblox.com/asset/?id=6031090990")
+end)
+
+dropdownIcon.deselected:Connect(function()
+    dropdownIcon:setImage("http://www.roblox.com/asset/?id=6031091004")
+end)
+
 dropdownIcon:setDropdown({
-    userStatsIcon,
-    userSettingsIcon,
+    UserStatsIcon,
+    SettingIcon,
 })

@@ -28,7 +28,6 @@ local mount, createElement = devbox.import(devbox.react) {
 
 
 function startClient()
-
 	OneFrame.Start(ClientFiles):andThenCall(OneFrame.Promise.delay, 2) :andThen(function()
 		OneFrame.Start(player.PlayerGui):andThenCall(OneFrame.Promise.delay, 1):andThen(function()
 			player:SetAttribute("Loaded", true)

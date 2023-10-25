@@ -8,7 +8,8 @@ local Component = react.Component:extend("Settings ScrollingFrame")
 function Component:render()
     return react.createElement("ScrollingFrame", {
         Name = "Setting Scrolling Frame",
-        Size = UDim2.new(0.8, 0, 1, 0),
+        Size = UDim2.new(1, 0, 0.86, 0),
+        Position = UDim2.new(0, 0, 0.138, 0),
         BackgroundTransparency = 1,
         ScrollBarThickness = 5,
     }, self.props[react.Children])

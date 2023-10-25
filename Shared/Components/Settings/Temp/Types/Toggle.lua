@@ -11,16 +11,39 @@ local Component = react.Component:extend("Setting Toggle")
 function Component:init()
     self.settingRef = react.createRef()
     self.toggle, self.updateToggle = react.createBinding(false)
+    self.color, self.updateColor = react.createBinding(false)
+    self.Text, self.updateText = react.createBinding("Disabled")
 
-    self.signal = rednet.createSignal()
+    self.colorBool = {
+        [false] = {
+            Text = "Disabled",
+            Color = Color3.fromRGB(109, 8, 8)
+        },
+        [true] = {
+            Text = "Enabled",
+            Color = Color3.fromRGB(34, 117, 62)
+        }
+    }
 end
 
-function Component:extend()
+function Component:render()
     return react.createElement("TextButton", {
         Name = "Toggle Setting Button",
-        Text = "",
-        Size = UDim2.new(0.5, 0, 0.5, 0),
+        Size = UDim2.new(0.234, 0, 0.609, 0),
         TextScaled = true,
+        Position = UDim2.new(0.747, 0, 0.19, 0),
+        BackgroundColor3 = self.color:map(function(value)
+
+            local val = self.colorBool[value]
+            self.updateText(val.Text)
+
+            return val.Color
+        end),
+        Text = self.Text:map(function(value)
+            return value
+        end),
+        TextColor3 = Color3.fromRGB(255, 255, 255),
+        Font = Enum.Font.Creepster,
 
         [react.Event.MouseButton1Click] = function(element: TextButton)
 
@@ -31,8 +54,12 @@ function Component:extend()
             local setting = self.settingRef:getValue()
             self.props.execute(setting, self.updateToggle, element)
         end,
-    }, {
+    }, self.props[react.Children], {
  
+        UICorner = react.createElement("UICorner", {
+            CornerRadius = UDim.new(0, 4)
+        }),
+
         Settings = react.createElement(react.Gateway, {
             path = Settings,
         }, {
@@ -44,13 +71,13 @@ function Component:extend()
                         return false
                     end
 
+                    self.updateColor(value)
                     return value
                 end),
 
                 [react.Change.Value] = function(_)
                     local newVal = self.settingRef:getValue()
-                    self.signal:Fire(newVal)
-                    rednet:FireServer(self.props.name, newVal)
+                    self.updateColor(newVal.Value)
                 end
             }),
         })

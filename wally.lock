@@ -4,10 +4,10 @@ registry = "test"
 
 [[package]]
 name = "daulric/devbox"
-version = "0.0.21"
+version = "0.0.22"
 dependencies = []
 
 [[package]]
 name = "ulric/ufld"
 version = "0.1.0"
-dependencies = [["devbox", "daulric/devbox@0.0.21"]]
+dependencies = [["devbox", "daulric/devbox@0.0.22"]]
