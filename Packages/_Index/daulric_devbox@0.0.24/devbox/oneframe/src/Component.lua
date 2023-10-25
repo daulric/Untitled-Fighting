@@ -53,8 +53,8 @@ function Component:extend(name: string, test: boolean?)
 
 end
 
-function Component:render()
-	error(`{self.name} does not have a render function`)
+function Component:start()
+	error(`{self.name} does not have a start function`)
 end
 
 function Component:preload()

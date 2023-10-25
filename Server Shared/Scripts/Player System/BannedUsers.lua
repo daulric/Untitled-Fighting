@@ -67,7 +67,7 @@ function Banned:preload()
 
 end
 
-function Banned:render()
+function Banned:start()
 
 	util.iterate(Players:GetPlayers(), function(_ ,player)
 		self.playerAdded(player)

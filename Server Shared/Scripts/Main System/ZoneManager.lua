@@ -11,7 +11,7 @@ local oneframe = devbox.oneframe
 
 local ZM = oneframe.Component:extend("Zone Manager")
 
-function ZM:render()
+function ZM:start()
     local area = workspace:WaitForChild("Arena"):WaitForChild("ForceField")
     local zone = ZonePlus.new(area)
 

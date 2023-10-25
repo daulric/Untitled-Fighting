@@ -83,7 +83,7 @@ function DataManager:preload()
 	})
 end
 
-function DataManager:render()
+function DataManager:start()
 	
 	for i, player in pairs(Players:GetPlayers()) do
 		self.state.playerAdded(self, player)

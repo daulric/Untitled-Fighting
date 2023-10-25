@@ -50,7 +50,7 @@ function PD:preload()
 	})
 end
 
-function PD:render()
+function PD:start()
 
 	Util.iterate(Players:GetPlayers(), function(_, player)
 		PD.state.playerAdded(player)

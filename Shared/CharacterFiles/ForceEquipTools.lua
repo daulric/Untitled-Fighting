@@ -5,7 +5,7 @@ local oneframe  = require(Packages:WaitForChild("devbox")).oneframe
 
 local fetChar = oneframe.Component:extend("Force Equip Tools")
 
-function fetChar:render(char: Model, player: Player)
+function fetChar:start(char: Model, player: Player)
 	local humanoid = char:FindFirstChildOfClass("Humanoid")
 	
 	if player.Team == game.Teams.Lobby then

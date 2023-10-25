@@ -14,7 +14,7 @@ local Tools = ServerStorage:WaitForChild("Tools")
 
 local CM = oneframe.Component:extend("Contestants Team Manager")
 
-function CM:render()
+function CM:start()
 	CM.Cleanup:Connect(ContestantsTeam.PlayerAdded, function(player: Player)
 
 		util.iterate(Tools:GetChildren(), function(_, tool)

@@ -35,7 +35,7 @@ function MCC:kick(player: Player, message: string)
 
 end
 
-function MCC:render(player: Player, message: string, prefix: string)
+function MCC:start(player: Player, message: string, prefix: string)
 	if string.find(message, "kick") then
 		self:kick(player, message)
 	end

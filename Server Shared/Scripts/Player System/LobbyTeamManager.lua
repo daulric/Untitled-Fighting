@@ -8,7 +8,7 @@ local LTM = oneframe.Component:extend("Lobby Team Manager")
 
 local connections = {}
 
-function LTM:render()
+function LTM:start()
 
     local function teamAdded(player: Player)
         task.wait(1)

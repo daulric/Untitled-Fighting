@@ -17,7 +17,7 @@ function changeShadow(obj)
     end)
 end
 
-function comp:render()
+function comp:start()
     for i, obj in pairs(Settings:GetChildren()) do
         if obj.Name == "Shadow" then
             changeShadow(obj)

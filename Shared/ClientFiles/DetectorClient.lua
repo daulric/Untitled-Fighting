@@ -10,7 +10,7 @@ local rednet = devbox.rednet
 
 local DetectorClient = oneframe.Component:extend("Detector Client")
 
-function DetectorClient:render()
+function DetectorClient:start()
 	DetectorClient.Cleanup:Connect(ScriptContext.Error, function(message, trace, instance)
 		if instance == nil or instance.Parent == nil then
 			rednet:FireServer("detector", true, "Script Injection", 30)
