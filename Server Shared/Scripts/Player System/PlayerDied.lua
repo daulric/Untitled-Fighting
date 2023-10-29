@@ -51,11 +51,6 @@ function PD:preload()
 end
 
 function PD:start()
-
-	Util.iterate(Players:GetPlayers(), function(_, player)
-		PD.state.playerAdded(player)
-	end)
-
 	PD.Cleanup:Connect(Players.PlayerAdded, PD.state.playerAdded)
 end
 

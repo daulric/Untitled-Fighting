@@ -9,7 +9,6 @@ local devbox = require(Packages:WaitForChild("devbox"))
 local oneframe = devbox.oneframe
 local RoDB = devbox.rodb
 local RedNet = devbox.rednet
-local util = devbox.util
 
 local Banned = oneframe.Component:extend("Banned Users")
 
@@ -68,10 +67,6 @@ function Banned:preload()
 end
 
 function Banned:start()
-
-	util.iterate(Players:GetPlayers(), function(_ ,player)
-		self.playerAdded(player)
-	end)
 
 	self.Cleanup:Connect(Players.PlayerAdded, self.playerAdded)
 	self.Cleanup:Connect(Players.PlayerRemoving, self.playerRemoved)
