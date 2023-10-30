@@ -13,18 +13,18 @@ function SaveSettingsData(obj)
 end
 
 function changeShadow(obj)
-    obj:GetPropertyChangedSignal("Value"):Connect(function()
-        for i, part: Part in pairs(workspace:GetDescendants()) do
+
+    for i, part: Part in pairs(workspace:GetDescendants()) do
             if part:IsA("Part") then
                 part.CastShadow = obj.Value
             end
-        end
+    end
 
-        SaveSettingsData(obj)
-    end)
 end
 
 function comp:start()
+
+    local data = {}
 
     rednet.listen("settings retrieval", function(data)
 
@@ -39,9 +39,15 @@ function comp:start()
     end)
 
     for i, obj in pairs(Settings:GetChildren()) do
-        if obj.Name == "Shadow" then
-            changeShadow(obj)
-        end
+
+        obj:GetPropertyChangedSignal("Value"):Connect(function()
+            if obj.Name == "Shadow" then
+                changeShadow(obj)
+            end
+
+            SaveSettingsData(obj)
+        end)
+
     end
 end
 
