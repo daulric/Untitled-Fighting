@@ -75,10 +75,10 @@ function Loading:didMount()
         self.updateLoadingText("Completed")
 
         local items = {
-            self.imageLabel:getValue(),
-            self.loadingtextlabel:getValue(),
-            self.gameName:getValue(),
-            self.imageLabel:getValue().Parent,
+            self.imageLabel.value,
+            self.loadingtextlabel.value,
+            self.gameName.current,
+            self.imageLabel.value.Parent,
         }
 
         task.wait(1)

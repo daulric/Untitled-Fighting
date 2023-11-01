@@ -25,15 +25,11 @@ function bar:render()
         ZIndex = 1,
         BackgroundColor3 = Color3.fromRGB(74, 16, 16),
         BorderColor3 = Color3.fromRGB(0,0,0),
-    }, {
-        createFragment(self.props[Children]),
-
+    }, self.props[Children], {
         UICorner = createElement("UICorner", {
             CornerRadius = UDim.new(0, 4),
         })
-    }
-
-)
+    })
 end
 
 return bar
