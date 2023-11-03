@@ -4,7 +4,6 @@ local devbox = require(ReplicatedStorage:WaitForChild("Packages").devbox)
 
 local react = devbox.react
 
-
 local Component = react.Component:extend("Settings Temp Frame")
 
 function Component:render()

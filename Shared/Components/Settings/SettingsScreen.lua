@@ -48,6 +48,16 @@ function Component:render()
                     execute = function(obj, update, element)
                         update(not obj.Value)
                     end
+                }),
+
+                FOVSettings = react.createElement(createTempBar, {
+                    Name = "FOV",
+                    Type = "Input",
+                    execute = function(_, update, isKeyDown, element)
+                        if isKeyDown(Enum.KeyCode.Return) then
+                            update(element.Text)
+                        end
+                    end
                 })
 
                 
