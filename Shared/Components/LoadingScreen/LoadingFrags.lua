@@ -77,7 +77,7 @@ function Loading:didMount()
         local items = {
             self.imageLabel.value,
             self.loadingtextlabel.value,
-            self.gameName.current,
+            self.gameName.value,
             self.imageLabel.value.Parent,
         }
 
