@@ -22,6 +22,11 @@ function changeShadow(obj)
 
 end
 
+function changeFOV(obj)
+    local camera = workspace.CurrentCamera
+    camera.FieldOfView = tonumber(obj.Value)
+end
+
 function comp:start()
 
     local data = {}
@@ -43,6 +48,10 @@ function comp:start()
         obj:GetPropertyChangedSignal("Value"):Connect(function()
             if obj.Name == "Shadow" then
                 changeShadow(obj)
+            end
+
+            if obj.Name == "FOV" then
+                changeFOV(obj)
             end
 
             SaveSettingsData(obj)

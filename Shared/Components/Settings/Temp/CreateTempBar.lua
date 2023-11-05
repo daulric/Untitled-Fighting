@@ -45,8 +45,6 @@ function Component:render()
         InputType = react.createElement(newElement, {
             name = self.props.Name,
             execute = self.props.execute,
-            focusLost = self.props.focusLost, -- works with only Input element
-            focused = self.props.focused, -- works with only Input element
         })
     })
 end

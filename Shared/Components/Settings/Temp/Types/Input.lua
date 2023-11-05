@@ -14,18 +14,6 @@ function InputComponent:init()
     self.textValue, self.updateTextValue = react.createBinding("")
 end
 
-function InputComponent:didMount()
-    local textBox: TextBox = self.textbox.value
-
-    textBox.FocusLost:Connect(function(bool, whatCauseFocusLost)
-        self.props.focusLost(textBox, bool, whatCauseFocusLost)
-    end)
-
-    textBox.Focused:Connect(function()
-        self.props.focused(textBox)
-    end)
-end
-
 function InputComponent.IsKeyDown(key: Enum.KeyCode, gamePadNum: Enum.UserInputType?)
 
     if UserInputService.KeyboardEnabled then
@@ -52,7 +40,7 @@ function InputComponent:render()
         Position = UDim2.new(0.747, 0, 0.19, 0),
         ClearTextOnFocus = true,
 
-        [react.Change.ReturnPressedFromOnScreenKeyboard] = function(element: TextBox)
+        [react.Event.ReturnPressedFromOnScreenKeyboard] = function(element: TextBox)
             if self.props.execute == nil or type(self.props.execute) ~= "function" then
                 error(`there is not execute function in props; we got {type(self.props.execute)}`)
             end
