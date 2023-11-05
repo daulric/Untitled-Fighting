@@ -3,14 +3,14 @@ local Players = game:GetService("Players")
 
 local Packages = ReplicatedStorage:WaitForChild("Packages")
 
-local devbox = require(Packages:WaitForChild("devbox"))
+local exon = require(Packages:WaitForChild("exon"))
 
-local OneFrame = devbox.oneframe
-local Controllers = devbox.controllers
-local react = devbox.react
-local util = devbox.util
+local OneFrame = exon.oneframe
+local Controllers = exon.controllers
+local react = exon.react
+local util = exon.util
 
-local RoDB = devbox.rodb
+local RoDB = exon.rodb
 
 local DataManager = OneFrame.Component:extend("Player Data Manager")
 

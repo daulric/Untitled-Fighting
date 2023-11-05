@@ -4,9 +4,9 @@ local StatusFolder = script.Parent
 local StatusText = require(StatusFolder:WaitForChild("Status"))
 local StatusFrame = require(StatusFolder:WaitForChild("StatusBar"))
 
-local devbox = require(ReplicatedStorage.Packages:WaitForChild("devbox"))
+local exon = require(ReplicatedStorage.Packages:WaitForChild("exon"))
 
-local Component, createElement = devbox.import(devbox.react) {
+local Component, createElement = exon.import(exon.react) {
     "Component", "createElement"
 }
 

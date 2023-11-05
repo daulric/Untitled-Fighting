@@ -3,11 +3,11 @@
 registry = "test"
 
 [[package]]
-name = "daulric/devbox"
-version = "0.0.25"
+name = "daulric/exon"
+version = "0.0.26"
 dependencies = []
 
 [[package]]
 name = "ulric/ufld"
 version = "0.1.0"
-dependencies = [["devbox", "daulric/devbox@0.0.25"]]
+dependencies = [["exon", "daulric/exon@0.0.26"]]

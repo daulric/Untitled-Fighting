@@ -1,8 +1,8 @@
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local devbox = require(ReplicatedStorage:WaitForChild("Packages").devbox)
+local exon = require(ReplicatedStorage:WaitForChild("Packages").exon)
 
-local react = devbox.react
+local react = exon.react
 
 local player = Players.LocalPlayer
 
@@ -11,7 +11,7 @@ local ScrollingFrame = require(script.Parent:WaitForChild("UserStatsScrollingFra
 
 local listofItems = require(script.Parent:WaitForChild("ListOfItems"))
 
-local Component, createElement, Ref, Children = devbox.import(react) {
+local Component, createElement, Ref, Children = exon.import(react) {
     "Component", "createElement", "Ref", "Children"
 }
 

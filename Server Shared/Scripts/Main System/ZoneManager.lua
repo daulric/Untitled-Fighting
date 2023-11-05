@@ -4,10 +4,10 @@ local Teams = game:GetService("Teams")
 local Packages = ReplicatedStorage:WaitForChild("Packages")
 local SysPackages = ReplicatedStorage:WaitForChild("SystemPackages")
 
-local devbox = require(Packages:WaitForChild("devbox"))
+local exon = require(Packages:WaitForChild("exon"))
 local ZonePlus = require(SysPackages:WaitForChild("ZonePlus"))
 
-local oneframe = devbox.oneframe
+local oneframe = exon.oneframe
 
 local ZM = oneframe.Component:extend("Zone Manager")
 

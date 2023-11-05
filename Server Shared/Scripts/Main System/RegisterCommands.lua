@@ -1,7 +1,7 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local devbox = require(ReplicatedStorage:WaitForChild("Packages").devbox)
+local exon = require(ReplicatedStorage:WaitForChild("Packages").exon)
 
-local Controllers = devbox.controllers
+local Controllers = exon.controllers
 local ACM = Controllers.GetController("Admin Command Manager")
 
 function AddCommand(command)

@@ -1,0 +1,8 @@
+[package]
+name = "daulric/exon"
+version = "0.0.26"
+description = "a collection of packages made and maintained by daulric"
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+
+[dependencies]

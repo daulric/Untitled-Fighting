@@ -3,10 +3,10 @@ local ScriptContext = game:GetService("ScriptContext")
 
 local Packages = ReplicatedStorage:WaitForChild("Packages")
 
-local devbox = require(Packages:WaitForChild("devbox"))
+local exon = require(Packages:WaitForChild("exon"))
 
-local oneframe = devbox.oneframe
-local rednet = devbox.rednet
+local oneframe = exon.oneframe
+local rednet = exon.rednet
 
 local DetectorClient = oneframe.Component:extend("Detector Client")
 

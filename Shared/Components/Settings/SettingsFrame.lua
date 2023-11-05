@@ -1,10 +1,10 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local TweenService = game:GetService("TweenService")
 
-local devbox = require(ReplicatedStorage:WaitForChild("Packages").devbox)
+local exon = require(ReplicatedStorage:WaitForChild("Packages").exon)
 
-local react = devbox.react
-local controllers = devbox.controllers
+local react = exon.react
+local controllers = exon.controllers
 
 local Component = react.Component:extend("Settings Frame")
 local SettingSignal = controllers.GetController("Settings Controller")

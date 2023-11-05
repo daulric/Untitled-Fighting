@@ -1,10 +1,10 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
-local devbox = require(ReplicatedStorage:WaitForChild("Packages").devbox)
+local exon = require(ReplicatedStorage:WaitForChild("Packages").exon)
 local Settings = ReplicatedStorage.Settings
 
-local react = devbox.react
-local rednet = devbox.rednet
+local react = exon.react
+local rednet = exon.rednet
 
 local Component = react.Component:extend("Setting Toggle")
 

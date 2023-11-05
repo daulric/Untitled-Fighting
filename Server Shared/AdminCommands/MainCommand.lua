@@ -1,11 +1,11 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Players = game:GetService("Players")
 
-local devbox = require(ReplicatedStorage.Packages:WaitForChild("devbox"))
+local exon = require(ReplicatedStorage.Packages:WaitForChild("exon"))
 
-local OneFrame = devbox.oneframe
-local Util = devbox.util
-local RedNet = devbox.rednet
+local OneFrame = exon.oneframe
+local Util = exon.util
+local RedNet = exon.rednet
 
 local MCC = OneFrame.Component:extend("Main Command Component")
 

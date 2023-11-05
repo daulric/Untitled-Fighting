@@ -3,10 +3,10 @@ local RunService = game:GetService("RunService")
 
 local Packages = ReplicatedStorage:WaitForChild("Packages")
 
-local devbox = require(Packages:WaitForChild("devbox"))
+local exon = require(Packages:WaitForChild("exon"))
 
-local rednet = devbox.rednet
-local Controllers = devbox.controllers
+local rednet = exon.rednet
+local Controllers = exon.controllers
 
 
 local USS = Controllers.CreateController {

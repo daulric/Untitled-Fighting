@@ -4,11 +4,11 @@ local RunService = game:GetService("RunService")
 
 local Packages = ReplicatedStorage:WaitForChild("Packages")
 
-local devbox = require(Packages:WaitForChild("devbox"))
+local exon = require(Packages:WaitForChild("exon"))
 
-local oneframe = devbox.oneframe
-local RoDB = devbox.rodb
-local RedNet = devbox.rednet
+local oneframe = exon.oneframe
+local RoDB = exon.rodb
+local RedNet = exon.rednet
 
 local Banned = oneframe.Component:extend("Banned Users")
 

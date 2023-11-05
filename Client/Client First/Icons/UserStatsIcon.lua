@@ -2,9 +2,9 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local Icon = require(ReplicatedStorage:WaitForChild("SystemPackages").Icon)
 
-local devbox = require(ReplicatedStorage.Packages:WaitForChild("devbox"))
+local exon = require(ReplicatedStorage.Packages:WaitForChild("exon"))
 
-local controllers = devbox.controllers
+local controllers = exon.controllers
 local UserStatsSelection = controllers.GetController("UserSS")
 
 local userStatsIcon = Icon.new()

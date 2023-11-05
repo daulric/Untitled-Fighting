@@ -1,8 +1,8 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local devbox = require(ReplicatedStorage.Packages.devbox)
+local exon = require(ReplicatedStorage.Packages.exon)
 
-local controllers = devbox.controllers
-local rednet = devbox.rednet
+local controllers = exon.controllers
+local rednet = exon.rednet
 
 local SC = controllers.CreateController {
     Name = "Settings Controller",

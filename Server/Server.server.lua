@@ -2,11 +2,11 @@ local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Packages = game:GetService("ReplicatedStorage").Packages
 
-local devbox = require(Packages:WaitForChild("devbox"))
+local exon = require(Packages:WaitForChild("exon"))
 
-local oneframe = devbox.oneframe
-local Controllers = devbox.controllers
-local rednet = devbox.rednet
+local oneframe = exon.oneframe
+local Controllers = exon.controllers
+local rednet = exon.rednet
 
 local ServerStorage = game:GetService("ServerStorage")
 local ScriptsFolder = ServerStorage.Shared:WaitForChild("Scripts")

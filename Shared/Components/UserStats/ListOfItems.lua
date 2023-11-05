@@ -1,8 +1,8 @@
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
-local devbox = require(ReplicatedStorage:WaitForChild("Packages").devbox)
-local react = devbox.react
+local exon = require(ReplicatedStorage:WaitForChild("Packages").exon)
+local react = exon.react
 
 local Temp = script.Parent:WaitForChild("Temp")
 local TempFrame = require(Temp:WaitForChild("StatsTempFrame"))

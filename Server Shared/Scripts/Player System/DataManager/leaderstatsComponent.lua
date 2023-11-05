@@ -1,7 +1,7 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local devbox = require(ReplicatedStorage.Packages:WaitForChild("devbox"))
+local exon = require(ReplicatedStorage.Packages:WaitForChild("exon"))
 
-local react = devbox.react
+local react = exon.react
 
 local leaderstatsComp = react.Component:extend("leaderstats component")
 

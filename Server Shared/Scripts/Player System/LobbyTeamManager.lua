@@ -1,8 +1,8 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Teams = game:GetService("Teams")
-local devbox = require(ReplicatedStorage:WaitForChild("Packages").devbox)
+local exon = require(ReplicatedStorage:WaitForChild("Packages").exon)
 
-local oneframe = devbox.oneframe
+local oneframe = exon.oneframe
 
 local LTM = oneframe.Component:extend("Lobby Team Manager")
 

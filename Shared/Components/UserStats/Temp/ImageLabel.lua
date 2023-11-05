@@ -1,7 +1,7 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local devbox = require(ReplicatedStorage:WaitForChild("Packages").devbox)
+local exon = require(ReplicatedStorage:WaitForChild("Packages").exon)
 
-local Component, createElement  = devbox.import(devbox.react) {
+local Component, createElement  = exon.import(exon.react) {
     "Component", "createElement",
 }
 

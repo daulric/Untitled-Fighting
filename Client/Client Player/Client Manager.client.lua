@@ -1,10 +1,10 @@
 local RS = game:GetService("ReplicatedStorage")
 local Packages = RS:WaitForChild("Packages")
 
-local devbox = require(Packages:WaitForChild("devbox"))
+local exon = require(Packages:WaitForChild("exon"))
 
-local OneFrame = devbox.oneframe
-local Controllers = devbox.controllers
+local OneFrame = exon.oneframe
+local Controllers = exon.controllers
 
 OneFrame.Settings.ignorePrint = true
 
@@ -22,7 +22,7 @@ local NewUST = RS.Shared:WaitForChild("Components").UserStats
 
 local UserStatsScreen = require(NewUST:WaitForChild("UserStatsScreen"))
 
-local mount, createElement = devbox.import(devbox.react) {
+local mount, createElement = exon.import(exon.react) {
 	"mount", "createElement"
 }
 

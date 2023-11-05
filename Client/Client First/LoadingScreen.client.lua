@@ -6,14 +6,14 @@ local StarterGui = game:GetService("StarterGui")
 
 local player = Players.LocalPlayer
 
-local devbox = require(ReplicatedStorage:WaitForChild("Packages").devbox)
+local exon = require(ReplicatedStorage:WaitForChild("Packages").exon)
 
 local Components = ReplicatedStorage:WaitForChild("Shared"):WaitForChild("Components")
 local loadingFrags = require(Components:WaitForChild("LoadingScreen").LoadingFrags)
 
-local react = devbox.react
+local react = exon.react
 
-local createElement, mount, unmount = devbox.import(react) {
+local createElement, mount, unmount = exon.import(react) {
     "createElement", "mount", "unmount"
 }
 

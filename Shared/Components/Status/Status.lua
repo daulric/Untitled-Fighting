@@ -1,10 +1,10 @@
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
-local devbox = require(ReplicatedStorage.Packages:WaitForChild("devbox"))
+local exon = require(ReplicatedStorage.Packages:WaitForChild("exon"))
 
-local react = devbox.react
-local rednet = devbox.rednet
+local react = exon.react
+local rednet = exon.rednet
 
 local button = react.Component:extend("Status")
 

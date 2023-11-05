@@ -1,10 +1,10 @@
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local devbox = require(ReplicatedStorage.Packages:WaitForChild("devbox"))
+local exon = require(ReplicatedStorage.Packages:WaitForChild("exon"))
 
-local rodb = devbox.rodb
-local oneframe = devbox.oneframe
-local rednet = devbox.rednet
+local rodb = exon.rodb
+local oneframe = exon.oneframe
+local rednet = exon.rednet
 
 local comp = oneframe.Component:extend("Settings Database")
 

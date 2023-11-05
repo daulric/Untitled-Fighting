@@ -1,7 +1,7 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Packages = ReplicatedStorage:WaitForChild("Packages")
 
-local oneframe  = require(Packages:WaitForChild("devbox")).oneframe
+local oneframe  = require(Packages:WaitForChild("exon")).oneframe
 
 local fetChar = oneframe.Component:extend("Force Equip Tools")
 

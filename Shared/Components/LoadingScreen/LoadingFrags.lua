@@ -8,11 +8,11 @@ local TweenService = game:GetService("TweenService")
 
 local player = Players.LocalPlayer
 
-local devbox = require(ReplicatedStorage:WaitForChild("Packages").devbox)
-local rednet = devbox.rednet
-local util = devbox.util
+local exon = require(ReplicatedStorage:WaitForChild("Packages").exon)
+local rednet = exon.rednet
+local util = exon.util
 
-local Component, createElement, createFragment, Ref, createRef, createBinding = devbox.import(devbox.react) {
+local Component, createElement, createFragment, Ref, createRef, createBinding = exon.import(exon.react) {
     "Component", "createElement", "createFragment", "Ref", "createRef", "createBinding"
 }
 

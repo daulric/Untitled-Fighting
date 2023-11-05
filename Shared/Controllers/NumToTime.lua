@@ -1,6 +1,6 @@
-local devbox = require(game.ReplicatedStorage.Packages.devbox)
+local exon = require(game.ReplicatedStorage.Packages.exon)
 
-local Controllers = devbox.controllers
+local Controllers = exon.controllers
 
 local TimeController = Controllers.CreateController {
 	Name = "Number to Time",

@@ -6,10 +6,10 @@ local Packages = ReplicatedStorage:WaitForChild("Packages")
 
 local ContestantsTeam = Teams:WaitForChild("Contestants")
 
-local devbox = require(Packages:WaitForChild("devbox"))
+local exon = require(Packages:WaitForChild("exon"))
 
-local oneframe = devbox.oneframe
-local util = devbox.util
+local oneframe = exon.oneframe
+local util = exon.util
 local Tools = ServerStorage:WaitForChild("Tools")
 
 local CM = oneframe.Component:extend("Contestants Team Manager")

@@ -1,15 +1,15 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local TweenService = game:GetService("TweenService")
 
-local devbox = require(ReplicatedStorage:WaitForChild("Packages").devbox)
+local exon = require(ReplicatedStorage:WaitForChild("Packages").exon)
 
-local react = devbox.react
+local react = exon.react
 
-local Component, createBinding, createElement, Ref, Children = devbox.import(react) {
+local Component, createBinding, createElement, Ref, Children = exon.import(react) {
     "Component", "createBinding", "createElement", "Ref", "Children"
 }
 
-local Controllers = devbox.controllers
+local Controllers = exon.controllers
 local UserSS = Controllers.GetController("UserSS")
 
 local USF = Component:extend("User Stats Frame")

@@ -4,10 +4,10 @@ local Teams = game:GetService("Teams")
 
 local Packages = ReplicatedStorage:WaitForChild("Packages")
 
-local devbox = require(Packages:WaitForChild("devbox"))
+local exon = require(Packages:WaitForChild("exon"))
 
-local OneFrame = devbox.oneframe
-local Util = devbox.util
+local OneFrame = exon.oneframe
+local Util = exon.util
 
 local PD = OneFrame.Component:extend("Player Died Manager")
 
