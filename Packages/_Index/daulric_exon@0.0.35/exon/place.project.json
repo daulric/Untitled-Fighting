@@ -1,0 +1,23 @@
+{
+  "name": "exon",
+  "tree": {
+    "$className": "DataModel",
+
+    "ReplicatedStorage": {
+
+      "exon": {
+        "$path": "default.project.json"
+      }
+    },
+
+    "ServerScriptService": {
+
+    },
+
+    "StarterPlayer": {
+      "StarterPlayerScripts": {
+        
+      }
+    }
+  }
+}

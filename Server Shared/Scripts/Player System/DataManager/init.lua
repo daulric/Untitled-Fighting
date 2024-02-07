@@ -34,7 +34,8 @@ function ManageLevel(leaderstats)
 end
 
 local function playerAdded(self, player: Player)
-	local profile = RoDB.create("Player Database", player, {
+
+	local profile = RoDB.LoadProfile("Player Database", player.UserId, {
 		Kills = 0,
 		Deaths = 0,
 		Bits = 0,
@@ -52,7 +53,7 @@ local function playerAdded(self, player: Player)
 	local leaderstatsElement = react.createElement(leaderstatsComponent)
 	react.mount(leaderstatsElement, Folder)
 
-	profile:Retrieve()
+	profile:Reconcile()
 
 	util.iterate(profile.data, function(index, value)
 		Folder:SetAttribute(index, value)
@@ -88,7 +89,7 @@ function DataManager:start()
 	self.Cleanup:Connect(Players.PlayerAdded, function(player)
 		self.state.playerAdded(self, player)
 	end)
-	
+
 	self.Cleanup:Connect(Players.PlayerRemoving, function(player)
 		self.state.playerRemoving(self, player)
 	end)
@@ -97,9 +98,10 @@ end
 
 function DataManager:closing()
 	self.Cleanup:Clean()
-	
+
 	util.iterate(Profiles, function(index, profile)
 		profile:Save()
+		profile:Close()
 		Profiles[index] = nil
 	end)
 

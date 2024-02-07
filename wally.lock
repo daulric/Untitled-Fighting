@@ -4,10 +4,10 @@ registry = "test"
 
 [[package]]
 name = "daulric/exon"
-version = "0.0.26"
+version = "0.0.35"
 dependencies = []
 
 [[package]]
 name = "ulric/ufld"
 version = "0.1.0"
-dependencies = [["exon", "daulric/exon@0.0.26"]]
+dependencies = [["exon", "daulric/exon@0.0.35"]]

@@ -16,7 +16,7 @@ local Profiles = {}
 local SecondsInADay = 86400
 
 function playerAdded(player: Player)
-	local profile = RoDB.create("Banned Users Database", player, {
+	local profile = RoDB.LoadProfile("Banned Users Database", player.UserId, {
 		banned = false,
 		reason = "",
 		timeRemaining = 0,
@@ -25,7 +25,7 @@ function playerAdded(player: Player)
 	
 	Profiles[player.UserId] = profile
 
-	profile:Retrieve()
+	profile:Reconcile()
 	
 	if profile.data.banned == true and profile.data.timeRemaining ~= 0 then
 		
@@ -55,6 +55,7 @@ function playerRemoved(player: Player)
 	local profile = Profiles[player.UserId]
 	if profile ~= nil then
 		profile:Save()
+		profile:Close()
 		Profiles[player.UserId] = nil
 	end
 end
@@ -78,7 +79,7 @@ function Banned:start()
 		end
 
 		local profile = Profiles[player.UserId]
-		
+
 		if banned == true then
 			if reason == nil or string.len(reason) <= 1 then
 				reason = "No Reason Provided!"
@@ -89,14 +90,14 @@ function Banned:start()
 			end
 
 			local daysinUnix = SecondsInADay * days
-			
+
 			profile.data.banned = banned
 			profile.data.reason = reason
 			profile.data.timeRemaining = os.time() + daysinUnix
 			profile.data.days = days
-			
+
 			local BannedTime = profile.data.timeRemaining
-			
+
 			profile:Save()
 			player:Kick(`Banned For {profile.data.days} Days For {profile.data.reason}`)
 		end
@@ -108,9 +109,10 @@ end
 function Banned:closing()
 	for i, profile in pairs(Profiles) do
 		profile:Save()
+		profile:Close()
 		Profiles[i] = nil
 	end
-	
+
 	self.Cleanup:Clean()
 end
 

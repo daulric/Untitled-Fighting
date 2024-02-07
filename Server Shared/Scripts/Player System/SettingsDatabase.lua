@@ -11,28 +11,41 @@ local comp = oneframe.Component:extend("Settings Database")
 local dataLogs = {}
 
 function playerAdded(player: Player)
-    local db = rodb.create("Player Settings Database", player)
-    dataLogs[player] = db
+    local profile = rodb.LoadProfile("Player Settings Database", player.UserId, {
+        Shadow = false,
+        FOV = 70,
+    })
 
-    db:Retrieve()
+    dataLogs[player] = profile
 
-    local data = db.data
+    profile:Reconcile()
+
+    local data = profile.data
 
     if data == nil then
         data = {}
     end
 
-    rednet:FireClient(player, "settings retrieval", data)
+    -- // This is where we push the data to the client or player loacally!!!
+    --rednet:FireClient(player, "settings retrieval", data)
+end
+
+function playerLeft(player: Player)
+    local profile = dataLogs[player.UserId]
+
+    if profile ~= nil then
+        profile:Save()
+        profile:Close()
+        task.wait(2)
+        dataLogs[player.UserId] = nil
+    end
+
 end
 
 function comp:start()
 
     self.Cleanup:Connect(Players.PlayerAdded, playerAdded)
-    self.Cleanup:Connect(Players.PlayerRemoving, function(player)
-        local db = dataLogs[player]
-        db:Save()
-        dataLogs[player] = nil
-    end)
+    self.Cleanup:Connect(Players.PlayerRemoving, playerLeft)
 
     rednet.listen("settings save data", function(player, incomingIndex, incomingValue)
         local db = dataLogs[player]
@@ -42,7 +55,18 @@ function comp:start()
 end
 
 function comp:closing()
-   self.Cleanup:Clean() 
+    for i, v in pairs(Players:GetPlayers()) do
+        local profile = dataLogs[v.UserId]
+        if profile ~= nil then
+            profile:Save()
+            profile:Close()
+            task.wait(2)
+            dataLogs[v.UserId] = nil
+        end
+        
+    end
+
+   self.Cleanup:Clean()
 end
 
 return comp

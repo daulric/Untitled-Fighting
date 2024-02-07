@@ -126,6 +126,9 @@ function Loading:render()
             BackgroundTransparency = 1,
         }, {
             UIAspect = createElement("UIAspectRatioConstraint"),
+            UICorner = createElement("UICorner", {
+                CornerRadius = UDim.new(1, 0),
+            })
         }),
 
         TextLabel = createElement("TextLabel", {
@@ -134,7 +137,7 @@ function Loading:render()
             Text = self.gameNameText:map(function(value)
                 return value
             end),
-            Position = UDim2.new(0.5, 0, 0.6, 0),
+            Position = UDim2.new(0.5, 0, 0.65, 0),
             AnchorPoint = Vector2.new(0.5, 0.5),
             Size = UDim2.new(0.386, 0,0.188, 0),
             TextScaled = true,
